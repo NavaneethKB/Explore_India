@@ -6,7 +6,7 @@ var blur=document.getElementById("blur")
 var category="Dance Forms";
 const optionsList = document.querySelectorAll(".option");
 
-const monumentsImg=['./img/monument1.jpg','./img/monument2.jpg','./img/monument3.jpg','./img/monument4.jpg','./img/monuments.jpg','./img/monuments.jpg','./img/monuments.jpg','./img/monuments.jpg'];
+const monumentsImg=['./img/monument1.jpg','./img/monument2.jpg','./img/monument3.jpg','./img/monument4.jpg','./img/monument5.jpg','./img/monument6.jpg','./img/monument7.jpg','./img/monument8.jpg'];
 const danceImg=['./img/dance1.jpg','./img/dance2.jpg','./img/dance3.jpg','./img/dance4.jpg','./img/dance5.jpg','./img/dance6.jpg','./img/dance7.jpg','./img/dance8.jpg'];
 const festivalImg=['./img/festival1.jpg','./img/festival2.jpg','./img/festival3.jpg','./img/festival4.jpg','./img/festival5.jpg','./img/festival6.jpg','./img/festival7.jpg','./img/festival8.jpg'];
 const leaderImg=['./img/leader1.jpg','./img/leader2.jpg','./img/leader3.jpg','./img/leader4.jpg','./img/leader5.jpg','./img/leader6.jpg','./img/leader7.jpg','./img/leader8.jpg'];
@@ -110,19 +110,23 @@ function setCarouselData(position){
       $(document).ready(function(){
         var scrollPos =  $(".carousel").offset().top;
         $(window).scrollTop(scrollPos);
-        // $('.carousel').focus();
-        $('.carousel').carousel({
-          interval: 500
-        })
-          for(let i=0;i<8;i++){
-            if(i!=position){
-              $('.carousel').carousel('next');
-            }else{
-              $('.carousel').carousel('pause');
-            }
+        $('.carousel').carousel(0);
+        $('.carousel').carousel(position);
+        $('.carousel').carousel('pause');
+        // $('.carousel').carousel({
+        //   interval: 500
+        // })
+          // for(let i=0;i<8;i++){
+          //   if(i!=position){
+          //     console.log("moving to "+i)
+          //     $('.carousel').carousel('next');
+          //   }else{
+          //     $('.carousel').carousel('pause');
+          //     break;
+          //   }
 
 
-          }
+          // }
           // $('.carousel').carousel(position);
 
       });
