@@ -19,23 +19,30 @@ optionsList.forEach(o => {
     switch(category) {
       case "Indian Monuments":
       monument();
+      carosalmonument();
         break;
       case "Sancturaies" :
         Sancturaies();
+        carosalsantuaries()
         break;
         case "Festivals" :
         
         festivals()
+        carosalfestivals()
           break;
           case "National Leaders" :
             NationalLeaders();
+            carosalleader()
             break;
             
               case "Dance Forms" :
            danceforms()
+           carosaldance()
               break;
               case "Martial Arts" :
              martialarts()
+     carosalmaritalarts()
+
               break;
       default:
         alert("helo")
@@ -43,6 +50,66 @@ optionsList.forEach(o => {
     }
   });
 });
+function   carosalmonument(){
+  document.getElementById("ccard1").src="./img/monument1.jpg"
+  document.getElementById("ccard2").src="./img/monument2.jpg"
+  document.getElementById("ccard3").src="./img/monument3.jpg"
+  document.getElementById("ccard4").src="./img/monument4.jpg"
+  document.getElementById("ccard5").src="./img/monument5.jpg"
+  document.getElementById("ccard6").src="./img/monument6.jpg"
+  document.getElementById("ccard7").src="./img/monument7.jpg"
+  document.getElementById("ccard8").src="./img/monument8.jpg"
+}
+function   carosaldance(){
+  document.getElementById("ccard1").src="./img/dance1.jpg"
+  document.getElementById("ccard2").src="./img/dance2.jpg"
+  document.getElementById("ccard3").src="./img/dance3.jpg"
+  document.getElementById("ccard4").src="./img/dance4.jpg"
+  document.getElementById("ccard5").src="./img/dance5.jpg"
+  document.getElementById("ccard6").src="./img/dance6.jpg"
+  document.getElementById("ccard7").src="./img/dance7.jpg"
+  document.getElementById("ccard8").src="./img/dance8.jpg"
+}
+function   carosalleader(){
+  document.getElementById("ccard1").src="./img/leader1.jpg"
+  document.getElementById("ccard2").src="./img/leader2.jpg"
+  document.getElementById("ccard3").src="./img/leader3.jpg"
+  document.getElementById("ccard4").src="./img/leader4.jpg"
+  document.getElementById("ccard5").src="./img/leader5.jpg"
+  document.getElementById("ccard6").src="./img/leader6.jpg"
+  document.getElementById("ccard7").src="./img/leader7.jpg"
+  document.getElementById("ccard8").src="./img/leader8.jpg"
+}
+function   carosalmaritalarts(){
+  document.getElementById("ccard1").src="./img/martialarts1.jpg"
+  document.getElementById("ccard2").src="./img/martialarts2.jpg"
+  document.getElementById("ccard3").src="./img/martialarts3.jpg"
+  document.getElementById("ccard4").src="./img/martialarts4.jpg"
+  document.getElementById("ccard5").src="./img/martialarts5.jpg"
+  document.getElementById("ccard6").src="./img/martialarts6.jpg"
+  document.getElementById("ccard7").src="./img/martialarts7.jpg"
+  document.getElementById("ccard8").src="./img/martialarts8.jpg"
+}
+function   carosalsantuaries(){
+  document.getElementById("ccard1").src="./img/Sancturaies1.jpg"
+  document.getElementById("ccard2").src="./img/Sancturaies2.jpg"
+  document.getElementById("ccard3").src="./img/Sancturaies3.jpg"
+  document.getElementById("ccard4").src="./img/Sancturaies4.jpg"
+  document.getElementById("ccard5").src="./img/Sancturaies5.jpg"
+  document.getElementById("ccard6").src="./img/Sancturaies6.jpg"
+  document.getElementById("ccard7").src="./img/Sancturaies7.jpg"
+  document.getElementById("ccard8").src="./img/Sancturaies8.jpg"
+}
+function   carosalfestivals(){
+  document.getElementById("ccard1").src="./img/festival1.jpg"
+  document.getElementById("ccard2").src="./img/festival2.jpg"
+  document.getElementById("ccard3").src="./img/festival3.jpg"
+  document.getElementById("ccard4").src="./img/festival4.jpg"
+  document.getElementById("ccard5").src="./img/festival5.jpg"
+  document.getElementById("ccard6").src="./img/festival6.jpg"
+  document.getElementById("ccard7").src="./img/festival7.jpg"
+  document.getElementById("ccard8").src="./img/festival8.jpg"
+}
 function festivals(){
    //Card-1
    document.getElementById("card1title").innerHTML = "Deepavali";
@@ -309,9 +376,11 @@ function toggle(num){
       document.getElementById("cardtitle ").innerHTML = "Bharatanatyam";
     document.getElementById("cardtext").innerHTML = "Performed on the celestial tunes of the Carnatic music, Bharatnatyam comes from the state of Tamil Nadu in South. The origins of Bharatnatyam can be traced back to 1000 BC, and it originates from the ancient temples of Tamil Nadu performed by the women of the classical period. The dance form is known for its beautiful body movements and gestures which are called Mudras in the traditional language. It focuses on the hand gestures, leg movement and the facial expressions of the dancer.";
     document.getElementById("cardimage").src="./img/dance1.jpg"
-  break;
-    
+
+ 
+ 
     }
+
 
   }
 
@@ -365,6 +434,7 @@ else if(num==2){
 
               break;
       default:
+      
         document.getElementById(" cardtitle").innerHTML = "Kathakali";
         document.getElementById("cardtext").innerHTML = "Performed on the celestial tunes of the Carnatic music, Bharatnatyam comes from the state of Tamil Nadu in South. The origins of Bharatnatyam can be traced back to 1000 BC, and it originates from the ancient temples of Tamil Nadu performed by the women of the classical period. The dance form is known for its beautiful body movements and gestures which are called Mudras in the traditional language. It focuses on the hand gestures, leg movement and the facial expressions of the dancer.";
         document.getElementById("cardimage").src="./img/dance2.jpg"
@@ -690,6 +760,7 @@ else if(num==2){
   }
  
   }
+
   var popup1=document.getElementById("popup1")
   blur.classList.toggle('active');
   popup1.classList.toggle('active')
