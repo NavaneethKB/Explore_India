@@ -3,9 +3,15 @@
 const selected = document.querySelector(".selected");
 const optionsContainer = document.querySelector(".options-container");
 var blur=document.getElementById("blur")
-var category;
+var category="Dance Forms";
 const optionsList = document.querySelectorAll(".option");
 
+const monumentsImg=['./img/monument1.jpg','./img/monument2.jpg','./img/monument3.jpg','./img/monument4.jpg','./img/monuments.jpg','./img/monuments.jpg','./img/monuments.jpg','./img/monuments.jpg'];
+const danceImg=['./img/dance1.jpg','./img/dance2.jpg','./img/dance3.jpg','./img/dance4.jpg','./img/dance5.jpg','./img/dance6.jpg','./img/dance7.jpg','./img/dance8.jpg'];
+const festivalImg=['./img/festival1.jpg','./img/festival2.jpg','./img/festival3.jpg','./img/festival4.jpg','./img/festival5.jpg','./img/festival6.jpg','./img/festival7.jpg','./img/festival8.jpg'];
+const leaderImg=['./img/leader1.jpg','./img/leader2.jpg','./img/leader3.jpg','./img/leader4.jpg','./img/leader5.jpg','./img/leader6.jpg','./img/leader7.jpg','./img/leader8.jpg'];
+const martialArtsImg=['./img/martialarts1.jpg','./img/martialarts2.jpg','./img/martialarts3.jpg','./img/martialarts4.jpg','./img/martialarts5.jpg','./img/martialarts6.jpg','./img/martialarts7.jpg','./img/martialarts8.jpg'];
+const sanctuariesImg=['./img/Sancturaies1.jpg','./img/Sancturaies2.jpg','./img/Sancturaies3.jpg','./img/Sancturaies4.jpg','./img/Sancturaies5.jpg','./img/Sancturaies6.jpg','./img/Sancturaies7.jpg','./img/Sancturaies8.jpg'];
 
 selected.addEventListener("click", () => {
   optionsContainer.classList.toggle("active");
@@ -16,32 +22,35 @@ optionsList.forEach(o => {
     selected.innerHTML = o.querySelector("label").innerHTML;
     category=document.getElementById("martialarts").textContent
     optionsContainer.classList.remove("active");
+    $("#allcards").show();
+    $("#mycarosal").hide();
     switch(category) {
+
       case "Indian Monuments":
       monument();
-      carosalmonument();
+      // carosalmonument();
         break;
       case "Sancturaies" :
         Sancturaies();
-        carosalsantuaries()
+        // carosalsantuaries()
         break;
         case "Festivals" :
         
         festivals()
-        carosalfestivals()
+        // carosalfestivals()
           break;
           case "National Leaders" :
             NationalLeaders();
-            carosalleader()
+            // carosalleader()
             break;
             
               case "Dance Forms" :
            danceforms()
-           carosaldance()
+          //  carosaldance()
               break;
               case "Martial Arts" :
              martialarts()
-     carosalmaritalarts()
+    //  carosalmaritalarts()
 
               break;
       default:
@@ -50,6 +59,77 @@ optionsList.forEach(o => {
     }
   });
 });
+function getRandomPosition(min, max,cat) {
+  var pos=Math.abs(Math.floor(Math.random() * (min -  max+ min) ) + min);
+  // alert("Random pos is "+pos);
+  // alert("category is ===="+cat);
+  setCarouselData(pos);
+}
+
+function setCarouselData(position){
+  
+  var carouselImagesList=[];
+  switch(category) {
+    case "Indian Monuments":
+    carouselImagesList=monumentsImg;
+      break;
+    case "Sancturaies" :
+     carouselImagesList=sanctuariesImg;
+      break;
+      case "Festivals" :
+      carouselImagesList=festivalImg;
+        break;
+        case "National Leaders" :
+          carouselImagesList=leaderImg;
+          break;
+          
+            case "Dance Forms" :
+        carouselImagesList=danceImg;
+            break;
+            case "Martial Arts" :
+           carouselImagesList=martialArtsImg;
+            break;
+        default:
+            alert("category is "+category);
+     
+      
+            
+  }
+
+  // alert(carouselImagesList);
+          
+      document.getElementById("img1").src=carouselImagesList[0];
+      document.getElementById("img2").src=carouselImagesList[1];
+      document.getElementById("img3").src=carouselImagesList[2];
+      document.getElementById("img4").src=carouselImagesList[3];
+      document.getElementById("img5").src=carouselImagesList[4];
+      document.getElementById("img6").src=carouselImagesList[5];
+      document.getElementById("img7").src=carouselImagesList[6];
+      document.getElementById("img8").src=carouselImagesList[7];
+      // alert("Pos is "+position )
+      $(document).ready(function(){
+        var scrollPos =  $(".carousel").offset().top;
+        $(window).scrollTop(scrollPos);
+        // $('.carousel').focus();
+        $('.carousel').carousel({
+          interval: 500
+        })
+          for(let i=0;i<8;i++){
+            if(i!=position){
+              $('.carousel').carousel('next');
+            }else{
+              $('.carousel').carousel('pause');
+            }
+
+
+          }
+          // $('.carousel').carousel(position);
+
+      });
+      // document.getElementById("carouselImg").carousel(position);
+  
+
+}
 function   carosalmonument(){
   document.getElementById("ccard1").src="./img/monument1.jpg"
   document.getElementById("ccard2").src="./img/monument2.jpg"
