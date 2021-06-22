@@ -4,6 +4,7 @@ const selected = document.querySelector(".selected");
 const optionsContainer = document.querySelector(".options-container");
 var blur=document.getElementById("blur")
 var category="Dance Forms";
+var randomPosition=0;
 const optionsList = document.querySelectorAll(".option");
 
 const monumentsImg=['./img/monument1.jpg','./img/monument2.jpg','./img/monument3.jpg','./img/monument4.jpg','./img/monument5.jpg','./img/monument6.jpg','./img/monument7.jpg','./img/monument8.jpg'];
@@ -61,6 +62,7 @@ optionsList.forEach(o => {
 });
 function getRandomPosition(min, max,cat) {
   var pos=Math.abs(Math.floor(Math.random() * (min -  max+ min) ) + min);
+  randomPosition=pos;
   // alert("Random pos is "+pos);
   // alert("category is ===="+cat);
   setCarouselData(pos);
@@ -110,9 +112,10 @@ function setCarouselData(position){
       $(document).ready(function(){
         var scrollPos =  $(".carousel").offset().top;
         $(window).scrollTop(scrollPos);
-        $('.carousel').carousel(0);
-        $('.carousel').carousel(position);
-        $('.carousel').carousel('pause');
+        // $('.carousel').carousel(0);
+        // $('.carousel').carousel(position);
+        // $('.carousel').carousel('pause');
+        scrollCarousel(position);
         // $('.carousel').carousel({
         //   interval: 500
         // })
@@ -133,6 +136,25 @@ function setCarouselData(position){
       // document.getElementById("carouselImg").carousel(position);
   
 
+}
+
+function setCarouselAtPosition(){
+  console.log("Setted at pos "+randomPosition)
+  $('.carousel').carousel(randomPosition);
+        $('.carousel').carousel('pause');
+}
+function scrollCarousel(position){
+
+  console.log("Scrolling to pos "+randomPosition);
+  $('.carousel').carousel('cycle');
+    $('.carousel').carousel({
+
+          interval: 1,
+          pause:false,
+          wrap:true
+        });
+
+    setTimeout(setCarouselAtPosition,3000);
 }
 function   carosalmonument(){
   document.getElementById("ccard1").src="./img/monument1.jpg"
