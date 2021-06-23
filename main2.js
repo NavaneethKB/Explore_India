@@ -137,12 +137,22 @@ function setCarouselData(position){
   
 
 }
+function showcard(){
+  
+  toggle(randomPosition)
+}
 
 function setCarouselAtPosition(){
   console.log("Setted at pos "+randomPosition)
+ 
   $('.carousel').carousel(randomPosition);
         $('.carousel').carousel('pause');
+        document.getElementById("learnmorebtn").style.display ="block"
+      
+      
+
 }
+
 function scrollCarousel(position){
 
   console.log("Scrolling to pos "+randomPosition);
@@ -426,12 +436,16 @@ function toggleclose(){
     var popup1=document.getElementById("popup1")
     popup1.classList.toggle('active')
     blur.classList.toggle('active');
+    var total=document.getElementById("allcards")
+    total.classList.toggle('blurr')
  
 }
 function toggle(num){
+  var total=document.getElementById("allcards")
+  total.classList.toggle('blurr')
     category=document.getElementById("martialarts").textContent
 
-  if(num==1){
+  if(num==0){
     switch(category) {
       case "Indian Monuments":
       
@@ -492,7 +506,7 @@ function toggle(num){
 
 
 
-else if(num==2){
+else if(num==1){
     
     switch(category) {
       case "Indian Monuments":
@@ -546,7 +560,7 @@ else if(num==2){
         document.getElementById("cardimage").src="./img/dance2.jpg"
     
     }
-  }else if(num==3){
+  }else if(num==2){
     switch(category) {
       case "Indian Monuments":
       
@@ -599,7 +613,7 @@ else if(num==2){
     }
    
   }
-  else if(num==4){
+  else if(num==3){
     switch(category) {
       case "Indian Monuments":
       
@@ -652,7 +666,7 @@ else if(num==2){
   }
     }
 
-  else if(num==5){
+  else if(num==6){
     switch(category) {
       case "Indian Monuments":
       
@@ -706,7 +720,7 @@ else if(num==2){
     }
     
   }
-  else if(num==6){
+  else if(num==5){
     switch(category) {
       case "Indian Monuments":
       
@@ -760,7 +774,7 @@ else if(num==2){
     }
 
   }
-  else if(num==7){
+  else if(num==6){
     switch(category) {
       case "Indian Monuments":
       

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Add an Category</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://kit.fontawesome.com/5b1503190b.js" crossorigin="anonymous"></script>
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/noui/nouislider.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+</head>
+
+<body>
+
+
+	<div class=" background container-contact100">
+		<div class="wrap-contact100">
+			<form class="contact100-form validate-form">
+				<span class="contact100-form-title">
+				Add a new Category
+				</span>
+
+				<div class="wrap-input100 validate-input bg1" data-validate="Please Type Your Name">
+					<span class="label-input100">FULL NAME *</span>
+					<input class="input100" type="text" name="name" placeholder="Enter Your Name">
+				</div>
+
+				<div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate = "Enter Your Email (e@a.x)">
+					<span class="label-input100">Email *</span>
+					<input class="input100" type="text" name="email" placeholder="Enter Your Email ">
+				</div>
+
+				<div class="wrap-input100 bg1 rs1-wrap-input100">
+					<span class="label-input100">Category</span>
+					<input class="input100" type="text" name="Category" placeholder="Enter The Category ">
+				</div>
+
+			
+
+
+				<div class="wrap-input100 validate-input bg0 rs1-alert-validate" data-validate = "Please Type Your Message">
+					<span class="label-input100">Information</span>
+					<textarea class="input100" name="message" placeholder="Information on the category"></textarea>
+				</div>
+				<div class= " wrap-input100  form">
+					<span class="label-input100">Select An Image Relatable to Category:</span>
+					<div class="grid">
+					  <div class="form-element">
+						<input type="file" id="file-1" accept="image/*">
+						<label for="file-1" id="file-1-preview">
+						  <img src="https://bit.ly/3ubuq5o" alt="">
+						  <div>
+							<span>+</span>
+							
+						  </div>
+						
+						</label>
+						<br>
+					  </div>
+					
+					
+					</div>
+				  </div>
+
+				<div class="container-contact100-form-btn">
+				<a href="#">	<button    class="contact100-form-btn">
+						<span>
+							Submit
+							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+						</span>
+					</button>
+					
+				</a>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div id="alert" class="alert hide ">
+		<span class="fas fa-exclamation-circle"></span>
+		<span id="alert_message">Data Submitted Sucessfully!</span>
+		<span onclick="close_alert" id ="close_btn"class="close-btn">
+		<span class="fas fa-times" onclick="close_alert"></span>
+		</span>
+		</div>
+
+
+	<script>
+	
+	function submited(){
+
+	
+var button=document.getElementById("alert").classList;
+var close_button=document.getElementById("close_btn");
+button.remove("hide")
+button.add("show")
+setTimeout(hide,200);
+function hide(){
+button.remove("show")
+button.add("hide")
+
+}}
+		function previewBeforeUpload(id){
+	  document.querySelector("#"+id).addEventListener("change",function(e){
+		if(e.target.files.length == 0){
+		  return;
+		}
+		let file = e.target.files[0];
+		let url = URL.createObjectURL(file);
+		document.querySelector("#"+id+"-preview div").innerText = file.name;
+		document.querySelector("#"+id+"-preview img").src = url;
+	  });
+	}
+	
+	previewBeforeUpload("file-1");
+	
+	</script>
+
+
+</body>
+</html>

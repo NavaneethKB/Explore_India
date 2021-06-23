@@ -2,8 +2,10 @@
 <html lang="en" id="htmlhome">
 <head>
     <meta charset="UTF-8">
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/5b1503190b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Explore India</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -13,7 +15,8 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="home_styles.css">
+
+    <link rel="stylesheet" href="home_styles.css">
   <script>
     $(document).ready(function(){
       $("#mycarosal").hide();
@@ -40,7 +43,8 @@
     </script>
 </head>
 
-<body >
+<body  id="total" >
+ 
   <h2><span  class="main_logo">EXPLORE INDIA</span></h2>
  
   <div class="middle">
@@ -98,14 +102,15 @@
          
         </div>
       
+      <a href="addcategory.html">
+        <lottie-player  class="plus_icon" src="https://assets7.lottiefiles.com/datafiles/5IanpdP2ZRSpvdr/data.json"  background="transparent"  speed="1"  style="width: 50px; height: 50px;" autoplay   ></lottie-player>
+      </a>
       </div>
-     
-    </div>
 
       
   
-         <script src="main.js"></script>
-         <div  class="container "  id="allcards" >
+         <script src="main2.js"></script>
+         <div   class="container "  id="allcards" >
           <div class="row justify-content-center" >
           <div class="col-md-3" >
           <div class="card shadow" style="width: 16rem;">
@@ -230,7 +235,7 @@
       
         </div>
         
-        
+      </div>
       
         </div>
         <div id="mycarosal" class="mycarosal">
@@ -256,7 +261,9 @@
               <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
             </ol>
               <div class="carousel-inner">
+               
                 <div class="carousel-item active">
+              
                   <img id="img1"class="d-block w-100" src="img/dance1.jpg" alt="First slide">
                 </div>
                 <div class="carousel-item">
@@ -281,8 +288,15 @@
                   <img id="img8" class="d-block w-100" src="img/dance8.jpg" alt="Third slide">
                 </div>
               </div>
-              
+           
             </div>
+            <a  onclick="showcard()"style="display: none;" id="learnmorebtn" href="#" class="animated-button1">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+           Learn More
+            </a>
               <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                 
                 
@@ -290,11 +304,15 @@
               <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
                 
                 <span class="sr-only">Next</span>
-              </a>
-            </div> 
+              </a> 
+              
+            
+           
+            </div>
+          
       </div>
        
-      
+     
 
 
     </body>
@@ -302,7 +320,7 @@
       <div  class="card"style="height: 100%; width: 700px;">
 
         <div class="card-body" >
-           <span onclick="toggleclose()" id="close1" class="pull-right clickable close-icon" data-effect="fadeOut">close</i></span>
+           <span onclick="toggleclose()" id="close1" class="pull-right clickable close-icon" data-effect="fadeOut"><i class="fas s fa-window-close"></i></span>
           <h5  id="cardtitle"class="card-title">Dance-1</h5>
          
           <p id="cardtext" class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
